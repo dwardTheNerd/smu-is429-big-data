@@ -85,27 +85,27 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 3. Select Amazon Linux AMI 32-bit and proceed
 4. You can leave the rest of the settings as default except for the Security Group configuration
 5. At the Configure Security Group page, click on "Add Rule", select "HTTP" from the dropdown box and proceed
-5. Before completing the process, make sure to select an existing key-pair or create a new one. Remember to download and .pem file as we need it to ssh into the new instance
-6. Once the new EC2instance is ready, select it in your "Instances" page and click on the "Connect" button. Follow the instructions to connect to your instance
-7. Once you have ssh into your new instance, type the following command into your terminal:
+6. Before completing the process, make sure to select an existing key-pair or create a new one. Remember to download and .pem file as we need it to ssh into the new instance
+7. Once the new EC2instance is ready, select it in your "Instances" page and click on the "Connect" button. Follow the instructions to connect to your instance
+8. Once you have ssh into your new instance, type the following command into your terminal:
     `sudo yum groupinstall -y "Web Server"`
-8. Once finish installing Apache web server, type the following command into your terminal to start the server:
+9. Once finish installing Apache web server, type the following command into your terminal to start the server:
     ```
     sudo service httpd start
     sudo chkconfig httpd on
     ```
-    
-9. Enter your instance's public DNS into any browser and make sure that you are able to view the test page: ![Apache Test Page](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/ec3.png)
-10. If you are unable to view the test page, chances are you did not set open an inbound connection for port 80. You can do so in the "Security Groups" page
-11. Now we need to set file permissions before we can upload files to the web server. Just type the following commands in order:
+
+10. Enter your instance's public DNS into any browser and make sure that you are able to view the test page: ![Apache Test Page](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/ec3.png)
+11. If you are unable to view the test page, chances are you did not set open an inbound connection for port 80. You can do so in the "Security Groups" page
+12. Now we need to set file permissions before we can upload files to the web server. Just type the following commands in order:
     ```
     sudo groupadd www
     sudo usermod -a -G www ec2-user
     ```
 
-12. Now log out by typing: `exit`
-13. Log back in again and type the following command `groups` and make sure you see the following: `ec2-user wheel www`
-14. Now type the following commands:
+13. Now log out by typing: `exit`
+14. Log back in again and type the following command `groups` and make sure you see the following: `ec2-user wheel www`
+15. Now type the following commands:
     ```
     sudo chown -R root:www /var/www
     sudo chmod 2775 /var/www`
@@ -113,25 +113,26 @@ This tutorial shall walk you through the steps I had taken to complete this assi
     find /var/www -type f -exec sudo chmod 0664 {} +
     ```
 
-15. Now ec2_user and any future members in the www group can add, delete and edit files in the Apache document root. Type `exit` to logout of the session
+16. Now ec2_user and any future members in the www group can add, delete and edit files in the Apache document root. Type `exit` to logout of the session
 
 ### Preparing for visualization
 1. Go to "Step 4: Visualization" folder
 2. Open "fetch_results.py" with a text-editor of your choice
 3. Insert your aws access key and aws secret key
 4. To get your aws access key and secret key, go to your AWS Management Console, on the top-right hand corner, select your name and click on "Security Credentials". If you do not have any key, just create one and take note of the values
-5. Now we need to transfer our html files over to our new Apache web server. Type the following command in your terminal:
+5. With "fetch_results.py" still open, insert the name of the S3 bucket you created for this tutorial
+6. Now we need to transfer our html files over to our new Apache web server. Type the following command in your terminal:
     `scp -i yourpem.pem -r ./Step\ 4:\ Visualize/ ec2-user@<aws-instance-public-dns>:/var/www/html/`
 
    Make sure you specify your .pem file correctly and correctly point to the correct directory where the "Step 4: Visualize" folder is located. Also insert your instance's public dns
-6. Once completing the transfer, connect (ssh) back to your instance from your terminal
-7. We can check if the folder and its contents are transferred correctly by typing the following command:
+7. Once completing the transfer, connect (ssh) back to your instance from your terminal
+8. We can check if the folder and its contents are transferred correctly by typing the following command:
     `ls /var/www/html/`
 
    You should be able to see "Step 4: Visualize" folder
-8. Now we are going to rename the folder to something easier to remember. Type the following commands:
+9. Now we are going to rename the folder to something easier to remember. Type the following commands:
     `mv /var/www/html/Step\ 4:\ Visualize /var/www/html/steam`
-9. Now we need to fetch the results from our Amazon EMR! Type the following commands:
+10. Now we need to fetch the results from our Amazon EMR! Type the following commands:
     ```
     cd /var/www/html/steam
     python fetch_results.py
@@ -139,3 +140,6 @@ This tutorial shall walk you through the steps I had taken to complete this assi
     ```
 
    You should be able to see some csv files in the output
+11. Now we can check out our page! Open you browser, enter the following url:
+    `<your-public-dns>/steam/`
+12. You should be able to view something like [this](http://ec2-54-254-255-84.ap-southeast-1.compute.amazonaws.com/steam/)
