@@ -3,7 +3,7 @@
 from boto.s3.connection import S3Connection
 
 def main():
-  conn = S3Connection('AKIAJRDVC2GH57F3ELEQ', 'YO5kMT7wJacmkII9gbwzA0hJeiIT+mr/yi986t0P')
+  conn = S3Connection('<your aws access key>', '<your aws secret key>')
   bucket = conn.get_bucket('smu-is429-steam')
   for k in bucket.list('output/'):
   	if k.name == 'output/':
