@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SMU IS429: Steam Visualization</title>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/gh-buttons.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+
+  <script src="./bower_components/jquery/jquery.min.js"></script>
+  <script src="./bower_components/d3/d3.min.js"></script>
+
+</head>
+<body>
+  
+  <div class="content">
+
+    <div class="welcome" data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;" data-700="opacity:0;top:-10%;transform:rotate(-90deg);">
+      <h1>SMU IS429 Big Data Assignment</h1>
+      <p>Welcome to my IS429 assignment page. Just a quick brief: I'm supposed to look for a huge dataset, analyze it using tools I can find on the cloud and finally post the results up here! So scroll down to find out what I did!</p>
+    </div>
+
+    <div class="introduction" data-0="opacity:0" data-900="opacity:1" data-1000="opacity:0">
+      <h1>Video Games Analysis</h1>
+    </div>
+
+    <div class="banner" data-800="opacity:0" data-900="opacity:1" data-1600="opacity:0;"></div>
+
+    <div class="total-spent-by-players" data-1400="opacity:0" data-2000="opacity:1" data-2100="opacity:0">
+      <h1>The most amount of money spent on Steam is...</h1>
+      <div id="highest-spender"></div>
+    </div>
+
+    <div class="total-spent-by-players" data-1400="opacity:0" data-2000="opacity:1" data-2100="opacity:0">
+      <h1>While the average amount of money spent is...</h1>
+      <div id="average-spent"></div>
+    </div>
+
+    <div class="popular-genres" data-2200="opacity:0" data-2700="opacity:1" data-3000="opacity:0">
+      <h1>The most popular genres (hours per player)</h1>
+      <div id="popular-genres-chart"></div>
+    </div>
+
+    <div class="most-played-games" data-3100="opacity:0" data-3700="opacity:1" data-4200="opacity:0">
+      <h1>The most played games (hours per player)</h1>
+      <div id="most-played-games-chart"></div>
+    </div>
+
+    <div class="most-owned-games" data-4100="opacity:0" data-4700="opacity:1" data-5200="opacity:0">
+      <h1>The most bought games</h1>
+      <div id="most-owned-games-chart"></div>
+    </div>
+
+    <div class="footer" data-4900="opacity:0" data-end="opacity:1">
+      <h1>That's all folks! Thank you for your time!</h1>
+      <p>
+        <a href="https://github.com/dwardTheNerd/smu-is429-big-data" class="button big icon log">Tutorial at GitHub</a>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script src="./bower_components/skrollr/dist/skrollr.min.js"></script>
+  <script>
+    var s = skrollr.init();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "smu-is429-steam-visualization",
+  "version": "1.0.0",
+  "ignore": [],
+  "dependencies": {
+    "d3": "latest",
+    "jquery": "~2.0",
+    "skrollr": "0.6.21"
+  }
+}

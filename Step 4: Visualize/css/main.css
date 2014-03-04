@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  background: url('../img/subtle_carbon.png');
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.banner {
+  background: url('../img/steam.jpg') no-repeat;
+  background-size: 100%;
+  height: 500px;
+  margin-bottom: 400px;
+}
+
+.welcome {
+  color: #ffffff;
+  height: 600px;
+}
+
+.footer {
+  height: 600px;
+  color: #ffffff;
+}
+
+.welcome h1,
+.footer h1 {
+  font-family: 'Hammersmith One', sans-serif;
+  text-align: center;
+  font-size: 4em;
+}
+
+.welcome p,
+.footer p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.introduction {
+  color: #ffffff;
+  height: 500px;
+}
+
+.introduction h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.popular-genres,
+.most-played-games,
+.most-owned-games,
+.total-spent-by-players {
+  color: #ffffff;
+}
+
+.popular-genres h1,
+.most-played-games h1,
+.most-owned-games h1,
+.total-spent-by-players h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center; 
+}
+
+#highest-spender,
+#average-spent {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  font-size: 4em;
+  color: orangered;
+}
+
+.total-spent-by-players {
+  height: 300px;
+}
+
+.popular-genres {
+  height: 1000px;
+}
+
+.most-played-games {
+  height: 1000px;
+}
+
+.most-owned-games {
+  height: 1000px;
+}
+
+/* ---------- D3 Charts ---------- */
+
+.popular-genres-bar, 
+.most-played-games-bar,
+.most-owned-games-bar {
+  fill: skyblue;
+}
+
+.popular-genres-bar:hover,
+.most-played-games-bar:hover,
+.most-owned-games-bar:hover {
+  fill: brown;
+}
+
+.popular-genres-axis,
+.most-played-games-axis,
+.most-owned-games-axis {
+  fill: #ffffff;
+  font: 10px sans-serif;
+}
+
+.popular-genres-axis path,
+.popular-genres-axis line,
+.most-played-games-axis path,
+.most-played-games-axis line,
+.most-owned-games-axis path,
+.most-owned-games-axis line   {
+  fill: none;
+  stroke: #ffffff;
+  shape-rendering: crispEdges;
+}
+
+.popular-genres-x.axis path,
+.most-played-games-x.axis path,
+.most-owned-games-x.axis path {
+  display: none;
+}
