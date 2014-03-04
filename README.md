@@ -118,13 +118,14 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 6. Once completing the transfer, connect (ssh) back to your instance from your terminal
 7. We can check if the folder and its contents are transferred correctly by typing the following command:
     `ls /var/www/html/`
+    
    You should be able to see "Step 4: Visualize" folder
 8. Now we are going to rename the folder to something easier to remember. Type the following commands:
     `mv /var/www/html/Step\ 4:\ Visualize /var/www/html/steam`
 9. Now we need to fetch the results from our Amazon EMR! Type the following commands:
     ```
-    cd /var/www/html/steam`
-    python fetch_results.py`
-    ls results`
-    ```
+    `cd /var/www/html/steam`
+    `python fetch_results.py`
+    `ls results`
+
    You should be able to see some csv files in the output
