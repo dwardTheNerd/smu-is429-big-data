@@ -47,4 +47,4 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 
 ### Setting up S3
 1. Create a bucket in S3
-2. ![S3 folder structure](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/S3.png "Create the following folders in your newly created bucket")
+2. Create the following folders in your new bucket: ![S3 folder structure](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/S3.png)
