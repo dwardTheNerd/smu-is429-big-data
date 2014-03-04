@@ -1,0 +1,60 @@
+Gabey uses 2 Steam APIs: Steam Web API and Steam Big Picture API.
+
+Installation
+------------
+
+Open terminal and run "python setup.py install"
+
+
+Usage Examples
+--------------
+
+1) Import the following package:
+
+    from gabey.steam import Steam
+
+2) Create a steam object and initialize it with your Steam Web API key
+
+    steam = Steam('<Your Steam Web API Key>')
+
+API
+---
+
+1) To obtain game information:
+
+    game = steam.get_game_data('<app id>')
+
+   The game object will have the following properties:
+    - app_id
+    - name
+    - price (in USD)
+    - genres (comma delimited)
+    - description
+
+
+2) To obtain player's summaries:
+  
+    player = steam.get_player_summaries('<player steam id>')
+
+  The player object will have the following properties:
+    - steam_id
+    - country
+    - member_since (unix timestamp)
+    - avatar_url
+
+3) To obtain player's game stats:
+
+    owned_games = steam.get_owned_games('<player steam id>')
+
+  This will return a list of objects, each will have the following properties:
+    - steam_id
+    - app_id
+    - playtime_forever (integer in minutes)
+
+
+4) To obtain player's friend list:
+
+    friend_list = steam.get_friends_id('<player steam id>')
+
+  This will return a list of String objects, each representing a steam ID
+
