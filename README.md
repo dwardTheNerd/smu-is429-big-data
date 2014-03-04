@@ -43,8 +43,36 @@ This dataset consists of all the player's game stats as of 01/03/2014. There are
     "76561197988460793","20","Team Fortress Classic","0","http://steamcommunity.com/profiles/76561197988460793/stats/20"
 
 ## Tutorial
-This tutorial shall walk you through the steps I had taken to complete this assignment. As I used Amazon Web Services exclusively for this assignment, please ensure that you have an account and is able to access Amazon Web Services before proceeding with the tutorial.
+This tutorial shall walk you through the steps I had taken to complete this assignment. As I used Amazon Web Services exclusively for this assignment, please ensure that you have an account and is able to access Amazon Web Services before proceeding with the tutorial. Please download the entire repository as well and extract them to your work space.
 
 ### Setting up S3
 1. Create a bucket in S3
-2. Create the following folders in your new bucket: ![S3 folder structure](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/S3.png)
+2. Create the following folders in your new bucket:
+..* bootstrap-actions
+..* data
+..* images
+..* lib
+..* logs
+..* output
+..* scripts
+3. Create the following subfolders within your output folder:
+..* most_owned_games
+..* most_played_games
+..* popular_genres
+..* total_spent_by_players
+4. Create the following subfolders within your data folder:
+..* game_stats
+..* games
+..* players
+7. Go to "Step 1: Prepare S3" folder and upload the files within the subfolders to the respective folders in S3
+8. Download the 3 datasets and upload them to the respective subfolders within the "data" folder
+
+### Setting up Elastic MapReduce (EMR) instance
+1. Go to your AWS Management Console and select "Elastic MapReduce"
+2. Create a new cluster
+3. Fill in an appropriate name for your cluster: ![EMR Configuration 1](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/EMR_Cluster_Configuration.png)
+4. Under "Applications to be installed" section, remove "Pig" and select "HBase": ![EMR Configuration 2](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/EMR_Cluster_Configuration2.png)
+5. Click on the button to add a boostrap action
+6. Specify the location of the boostrap action script (it should be in your new S3 bucket): ![EMR Configuration 3](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/EMR_Cluster_Configuration3.png)
+7. Click on the button to add a step
+8. Specify the location of the Hive script, your data folder and your output folder: ![EMR Configuration 4](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/EMR_Cluster_Configuration5.png)

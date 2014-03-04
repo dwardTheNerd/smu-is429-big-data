@@ -12,7 +12,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS players (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/data/players/';
+LOCATION '${INPUT}/players/';
 
 CREATE EXTERNAL TABLE IF NOT EXISTS games (
   appID STRING,
@@ -22,7 +22,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS games (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/data/games/';
+LOCATION '${INPUT}/games/';
 
 CREATE EXTERNAL TABLE IF NOT EXISTS game_stats (
   steamID STRING,
@@ -33,7 +33,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS game_stats (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/data/game_stats/';
+LOCATION '${INPUT}/game_stats/';
 
 CREATE EXTERNAL TABLE IF NOT EXISTS total_spent_by_players (
   steamID STRING,
@@ -41,7 +41,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS total_spent_by_players (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/output/total_spent_by_players/';
+LOCATION '${OUTPUT}/total_spent_by_players/';
 
 CREATE EXTERNAL TABLE IF NOT EXISTS popular_genres (
   gameName STRING,
@@ -49,7 +49,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS popular_genres (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/output/popular_genres/';
+LOCATION '${OUTPUT}/popular_genres/';
 
 CREATE EXTERNAL TABLE IF NOT EXISTS most_played_games (
   gameName STRING,
@@ -57,7 +57,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS most_played_games (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/output/most_played_games/';
+LOCATION '${OUTPUT}/most_played_games/';
 
 CREATE EXTERNAL TABLE IF NOT EXISTS most_owned_games (
   gameName STRING,
@@ -65,7 +65,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS most_owned_games (
 )
 ROW FORMAT SERDE 'com.bizo.hive.serde.csv.CSVSerde'
 STORED AS TEXTFILE
-LOCATION 's3://smu-is429-steam/output/most_owned_games/';
+LOCATION '${OUTPUT}/most_owned_games/';
 
 
 
