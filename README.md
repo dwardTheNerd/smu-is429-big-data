@@ -42,6 +42,20 @@ This dataset consists of all the player's game stats as of 01/03/2014. There are
     "76561197988460793","17520","Synergy","14.5","http://steamcommunity.com/profiles/76561197988460793/stats/Synergy"
     "76561197988460793","20","Team Fortress Classic","0","http://steamcommunity.com/profiles/76561197988460793/stats/20"
 
+## The process
+Here is a summary of the entire process of the work I did:
+1. Scrape data on Steam
+2. Set up S3 in preparation to run MapReduce on AWS EMR
+3. Setup and launch AWS EMR cluster
+4. Add a Hive step
+5. Wait for results
+6. Fetch results
+7. Visualize
+
+## Results
+The summary of my analysis done using Hadoop and Hive can be found [here](http://ec2-54-254-255-84.ap-southeast-1.compute.amazonaws.com/steam/)
+
+
 ## Tutorial
 This tutorial shall walk you through the steps I had taken to complete this assignment. As I used Amazon Web Services exclusively for this assignment, please ensure that you have an account and is able to access Amazon Web Services before proceeding with the tutorial. Please download the entire repository as well and extract them to your work space.
 
@@ -143,3 +157,13 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 11. Now we can check out our page! Open you browser, enter the following url:
     `<your-public-dns>/steam/`
 12. You should be able to view something like [this](http://ec2-54-254-255-84.ap-southeast-1.compute.amazonaws.com/steam/)
+
+## What I learnt
+1. Writing my own python scraper
+2. Developing a simple API wrapper
+3. Learnt how to create a python package using setuptools
+4. Learnt how to setup Apache Hadoop and Hive
+5. Learnt how to write a simple MapReduce script
+6. Learnt how to write HiveQL
+7. Learnt how to integrate different AWS products together
+8. Troubleshooting....A LOT of troubleshooting...
