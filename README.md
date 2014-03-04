@@ -90,8 +90,11 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 7. Once you have ssh into your new instance, type the following command into your terminal:
     `sudo yum groupinstall -y "Web Server"`
 8. Once finish installing Apache web server, type the following command into your terminal to start the server:
-    `sudo service httpd start`
-    `sudo chkconfig httpd on`
+    ```
+    sudo service httpd start
+    sudo chkconfig httpd on
+    ```
+    
 9. Enter your instance's public DNS into any browser and make sure that you are able to view the test page: ![Apache Test Page](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/ec3.png)
 10. If you are unable to view the test page, chances are you did not set open an inbound connection for port 80. You can do so in the "Security Groups" page
 11. Now we need to set file permissions before we can upload files to the web server. Just type the following commands in order:
@@ -99,15 +102,15 @@ This tutorial shall walk you through the steps I had taken to complete this assi
     sudo groupadd www
     sudo usermod -a -G www ec2-user
     ```
-    
+
 12. Now log out by typing: `exit`
 13. Log back in again and type the following command `groups` and make sure you see the following: `ec2-user wheel www`
 14. Now type the following commands:
     ```
-    sudo chown -R root:www /var/www`
+    sudo chown -R root:www /var/www
     sudo chmod 2775 /var/www`
-    find /var/www -type d -exec sudo chmod 2775 {} +`
-    find /var/www -type f -exec sudo chmod 0664 {} +`
+    find /var/www -type d -exec sudo chmod 2775 {} +
+    find /var/www -type f -exec sudo chmod 0664 {} +
     ```
 
 15. Now ec2_user and any future members in the www group can add, delete and edit files in the Apache document root. Type `exit` to logout of the session
