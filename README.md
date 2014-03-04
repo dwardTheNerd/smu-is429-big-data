@@ -122,7 +122,9 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 8. Now we are going to rename the folder to something easier to remember. Type the following commands:
     `mv /var/www/html/Step\ 4:\ Visualize /var/www/html/steam`
 9. Now we need to fetch the results from our Amazon EMR! Type the following commands:
-    `cd /var/www/html/steam`
-    `python fetch_results.py`
-    `ls results`
+    ```
+    cd /var/www/html/steam`
+    python fetch_results.py`
+    ls results`
+    ```
    You should be able to see some csv files in the output
