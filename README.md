@@ -81,4 +81,19 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 
 ### Setting up EC2
 1. Go to your AWS Management Console and select "EC2"
-2. 
+2. Launch an instance
+3. Select Amazon Linux AMI 32-bit and proceed
+4. You can leave the rest of the settings as default except for the Security Group configuration
+5. At the Configure Security Group page, click on "Add Rule", select "HTTP" from the dropdown box and proceed
+5. Before completing the process, make sure to select an existing key-pair or create a new one. Remember to download and .pem file as we need it to ssh into the new instance
+6. Once the new EC2instance is ready, select it in your "Instances" page and click on the "Connect" button. Follow the instructions to connect to your instance
+7. Once you have ssh into your new instance, type the following command into your terminal:
+    sudo yum groupinstall -y "Web Server"
+8. Once finish installing Apache web server, type the following command into your terminal to start the server:
+    sudo service httpd start
+    sudo chkconfig httpd on
+9. Enter your instance's public DNS into any browser and make sure that you are able to view the test page: ![Apache Test Page](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/images/ec3.png)
+10. If you are able to view the test page, then you are done! Now let's move on to the next step.
+
+### Preparing for visualization
+
