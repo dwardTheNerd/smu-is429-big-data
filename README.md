@@ -104,11 +104,25 @@ This tutorial shall walk you through the steps I had taken to complete this assi
     `sudo chmod 2775 /var/www`
     `find /var/www -type d -exec sudo chmod 2775 {} +`
     `find /var/www -type f -exec sudo chmod 0664 {} +`
-15. Now ec2_user and any future members in the www group can add, delete and edit files in the Apache document root.
+15. Now ec2_user and any future members in the www group can add, delete and edit files in the Apache document root. Type `exit` to logout of the session
 
 ### Preparing for visualization
 1. Go to "Step 4: Visualization" folder
 2. Open "fetch_results.py" with a text-editor of your choice
 3. Insert your aws access key and aws secret key
 4. To get your aws access key and secret key, go to your AWS Management Console, on the top-right hand corner, select your name and click on "Security Credentials". If you do not have any key, just create one and take note of the values
-5. 
+5. Now we need to transfer our html files over to our new Apache web server. Type the following command in your terminal:
+    `scp -i yourpem.pem -r ./Step\ 4:\ Visualize/ ec2-user@<aws-instance-public-dns>:/var/www/html/`
+
+   Make sure you specify your .pem file correctly and correctly point to the correct directory where the "Step 4: Visualize" folder is located. Also insert your instance's public dns
+6. Once completing the transfer, connect (ssh) back to your instance from your terminal
+7. We can check if the folder and its contents are transferred correctly by typing the following command:
+    `ls /var/www/html/`
+   You should be able to see "Step 4: Visualize" folder
+8. Now we are going to rename the folder to something easier to remember. Type the following commands:
+    `mv /var/www/html/Step\ 4:\ Visualize /var/www/html/steam`
+9. Now we need to fetch the results from our Amazon EMR! Type the following commands:
+    `cd /var/www/html/steam`
+    `python fetch_results.py`
+    `ls results`
+   You should be able to see some csv files in the output
