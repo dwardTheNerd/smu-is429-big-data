@@ -3,6 +3,13 @@
 ## Introduction ##
 As part of my SMU IS429 assignment, I am tasked to search for my own dataset and process it using available cloud resources.
 
+## The Problem ##
+Here are the problems I have identified for this assignment:
+* On average, how much are players willing to spend on Steam?
+* What are the most popular genre(s) of games?
+* What are the type games that have high replay values?
+* What are the type of games that players like to buy?
+
 ## Datasets ##
 For this assignment, I have decided to scrape data from Steam's API. The scraping process produced 3 csv files:
 * [players.csv](https://s3-ap-southeast-1.amazonaws.com/smu-is429-steam/data/players/players.csv)
