@@ -166,4 +166,5 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 5. Learning how to write a simple MapReduce script
 6. Learning how to write HiveQL
 7. Learning how to integrate different AWS products together
-8. Troubleshooting....A LOT of troubleshooting...
+8. I need time to learn D3.js!!!!
+9. Troubleshooting....A LOT of troubleshooting...
