@@ -161,9 +161,9 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 ## What I learnt
 1. Writing my own python scraper
 2. Developing a simple API wrapper
-3. Learnt how to create a python package using setuptools
-4. Learnt how to setup Apache Hadoop and Hive
-5. Learnt how to write a simple MapReduce script
-6. Learnt how to write HiveQL
-7. Learnt how to integrate different AWS products together
+3. Learning how to create a python package using setuptools
+4. Learning how to setup Apache Hadoop and Hive
+5. Learning how to write a simple MapReduce script
+6. Learning how to write HiveQL
+7. Learning how to integrate different AWS products together
 8. Troubleshooting....A LOT of troubleshooting...
