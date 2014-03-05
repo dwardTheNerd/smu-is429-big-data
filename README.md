@@ -83,7 +83,7 @@ This tutorial shall walk you through the steps I had taken to complete this assi
     ```
     #!/bin/sh
 
-    hadoop fs -copyToLocal s3n://<your-s3-bucket>/bootstrap-actions/csv-serde-0.9.1.jar $HADOOP_HOME/lib/
+    hadoop fs -copyToLocal s3n://<your-s3-bucket>/lib/csv-serde-0.9.1.jar $HADOOP_HOME/lib/
     ```
 
 7. Insert your S3 bucket name and save the file
