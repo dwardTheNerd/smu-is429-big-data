@@ -62,22 +62,22 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 ### Setting up S3
 1. Create a bucket in S3
 2. Create the following folders in your new bucket:
- ..* bootstrap-actions
- ..* data
- ..* images
- ..* lib
- ..* logs
- ..* output
- ..* scripts
+  * bootstrap-actions
+  * data
+  * images
+  * lib
+  * logs
+  * output
+  * scripts
 3. Create the following subfolders within your output folder:
- ..* most_owned_games
- ..* most_played_games
- ..* popular_genres
- ..* total_spent_by_players
+  * most_owned_games
+  * most_played_games
+  * popular_genres
+  * total_spent_by_players
 4. Create the following subfolders within your data folder:
- ..* game_stats
- ..* games
- ..* players
+  * game_stats
+  * games
+  * players
 5. Download and extract the repository. Go to "Step 1: Prepare S3" folder
 6. Go into "bootstrap-actions" and open "transfer-lib.sh" with a text editor of your choice. You should see something like this:
     ```
