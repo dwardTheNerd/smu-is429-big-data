@@ -78,8 +78,17 @@ This tutorial shall walk you through the steps I had taken to complete this assi
 ..* game_stats
 ..* games
 ..* players
-7. Go to "Step 1: Prepare S3" folder and upload the files within the subfolders to the respective folders in S3
-8. Download the 3 datasets and upload them to the respective subfolders within the "data" folder
+5. Download and extract the repository. Go to "Step 1: Prepare S3" folder
+6. Go into "bootstrap-actions" and open "transfer-lib.sh" with a text editor of your choice. You should see something like this:
+    ```
+    #!/bin/sh
+
+    hadoop fs -copyToLocal s3n://<your-s3-bucket>/bootstrap-actions/csv-serde-0.9.1.jar $HADOOP_HOME/lib/
+    ```
+
+7. Insert your S3 bucket name and save the file
+8. Go back to "Step 1: Prepare S3" folder and upload the files within the subfolders to the respective folders in S3
+9. Download the 3 datasets and upload them to the respective subfolders within the "data" folder
 
 ### Setting & running Elastic MapReduce (EMR) instance
 1. Go to your AWS Management Console and select "Elastic MapReduce"
